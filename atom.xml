@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://Boris-1024.github.io/</id>
+    <id>https://boris-1024.github.io/</id>
     <title>Boris_blog</title>
-    <updated>2020-05-26T13:01:26.098Z</updated>
+    <updated>2020-05-26T13:08:26.344Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://Boris-1024.github.io/"/>
-    <link rel="self" href="https://Boris-1024.github.io/atom.xml"/>
+    <link rel="alternate" href="https://boris-1024.github.io/"/>
+    <link rel="self" href="https://boris-1024.github.io/atom.xml"/>
     <subtitle>JavaEE自学之路</subtitle>
-    <logo>https://Boris-1024.github.io/images/avatar.png</logo>
-    <icon>https://Boris-1024.github.io/favicon.ico</icon>
+    <logo>https://boris-1024.github.io/images/avatar.png</logo>
+    <icon>https://boris-1024.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Boris_blog</rights>
     <entry>
         <title type="html"><![CDATA[JavaEE学习笔记]]></title>
-        <id>https://Boris-1024.github.io/post/javaee-xue-xi-bi-ji/</id>
-        <link href="https://Boris-1024.github.io/post/javaee-xue-xi-bi-ji/">
+        <id>https://boris-1024.github.io/post/javaee-xue-xi-bi-ji/</id>
+        <link href="https://boris-1024.github.io/post/javaee-xue-xi-bi-ji/">
         </link>
         <updated>2020-05-26T12:48:27.000Z</updated>
         <content type="html"><![CDATA[<h1 id="day01-521待补充">Day01 5.21(待补充)</h1>
