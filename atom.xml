@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://boris-1024.github.io/</id>
     <title>Boris_blog</title>
-    <updated>2020-05-26T14:05:53.357Z</updated>
+    <updated>2020-05-26T14:06:33.747Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://boris-1024.github.io/"/>
     <link rel="self" href="https://boris-1024.github.io/atom.xml"/>
@@ -10,4 +10,136 @@
     <logo>https://boris-1024.github.io/images/avatar.png</logo>
     <icon>https://boris-1024.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Boris_blog</rights>
+    <entry>
+        <title type="html"><![CDATA[JavaEE学习笔记]]></title>
+        <id>https://boris-1024.github.io/post/javaee-xue-xi-bi-ji/</id>
+        <link href="https://boris-1024.github.io/post/javaee-xue-xi-bi-ji/">
+        </link>
+        <updated>2020-05-26T12:48:27.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="day01-521待补充">Day01 5.21(待补充)</h1>
+<h2 id="1文档注释">1.文档注释</h2>
+<pre><code class="language-java">/**
+ * 文档注释（类与入口之间）
+ */
+</code></pre>
+<h2 id="2关机代码">2.关机代码</h2>
+<pre><code class="language-java">//自动关机
+Runtime.getRuntime().exec(&quot;shutdown -s -t 3600&quot;);
+//取消自动关机
+Runtime.getRuntime().exec(&quot;shutdown -a&quot;);
+</code></pre>
+<h2 id="3字符串连接">3.字符串连接</h2>
+<pre><code class="language-java">//字符串连接 结果为2111
+String text = 1+1+&quot;1&quot;+1+1;
+System.out.println(text);
+</code></pre>
+<h2 id="4快捷键">4.快捷键</h2>
+<pre><code class="language-java">// sout或syso alt+/ 自动联想补全
+System.out.println(&quot; &quot;);
+//段落注释 选中后 ctrl+shift+/
+//多行注释 选中后 ctrl+/
+//代码缩进 Tab
+</code></pre>
+<h2 id="5变量定义注意点">5.变量定义注意点</h2>
+<pre><code class="language-java">//float定义时，直接写出的浮点数据默认为double，会提示强转
+//解决办法：浮点数字后面加f
+float f1 = 10.1f;
+//long定义时，整形数据默认为int,值过大会出错
+//解决：整形数字后面加l
+long l1 = 2200000000l;
+//字符用单引号
+char c1 = 'A';
+System.out.println((int)c1);//65
+System.out.println(++c1);//B
+</code></pre>
+<h2 id="6运算符">6.运算符</h2>
+<pre><code class="language-java">短路与&amp;&amp;，短路或||，只计算首项结果
+异或^ 同假异真（二进制运算）
+/两边都是整数时是整除操作，其他情况均为正常除法操作
+//三目运算符示例：
+Max = Max&lt;nums[i]?nums[i]:Max;
+Min = Min&gt;nums[i]?nums[i]:Min;
+</code></pre>
+<h2 id="7接收用户输入">7.接收用户输入</h2>
+<pre><code class="language-java">//用于接收各种数据类型
+Scanner input = new Scanner(System.in);
+
+System.out.println(&quot;请输入一段数字：&quot;); 
+//nextInt()只接收整形，否则报错
+int i = input.nextInt();
+
+//nextLine()不要和其他next方法一起用，尤其nextLine()不要放在他们后面,代码中若只定义一次Scanner对象，解决办法如下：
+//1.接收不同类型数据时统一用nextLine()接收后在由字符串转换为相应数据类型
+//2.在每一个next()等语句之后加一个nextLine()语句，将被next()去掉的Enter结束符过滤掉
+//3.把nextLine()改为next()
+
+System.out.println(&quot;请输入next接收的内容：&quot;);
+//next():有效内容前的空格均不接收，遇空格或换行接收结束
+String str1 = input.next();
+
+System.out.println(&quot;请输入nextLine接收的内容：&quot;);
+//nextLine():遇换行接收才结束
+String str2 = input.nextLine();
+</code></pre>
+<h2 id="8变量作用域">8.变量作用域</h2>
+<pre><code class="language-java">类中方法一般不可直接调用类成员变量与函数，需用类对象来调用，除非变量与函数用static修饰
+方法中，同块内下可调用上，内可调用外上；同级不同块之间一般不可调用
+</code></pre>
+<h2 id="9static静态方法">9.static静态方法</h2>
+<pre><code class="language-java">静态方法不依赖任何对象的存在而存在，可直接调用
+static方法内部不能调用非静态方法，反过来可以直接调用
+</code></pre>
+<h1 id="day02-522">Day02 5.22</h1>
+<h2 id="1switch注意事项">1.switch注意事项</h2>
+<pre><code class="language-java">？表达式返回值必须是以下类型：int,byte,char,short,String-
+case后面无break时，则直接执行下面的case，直到遇到break才退出swhtch
+default可选可不选
+</code></pre>
+<h2 id="2字符串注意事项">2.字符串注意事项</h2>
+<pre><code class="language-java">字符串比较采用equals()方法，其比较的是值，而==比较的是地址
+使用 &quot;常量&quot;.equals(变量) 或 后输入的.equals(之前的)避免空指针异常
+String newstr = str.trim();//删除字符串前后空格
+//截取子串，索引0开始，i为开始索引，j为结束索引加一
+String s = newstr.substring(i, j);
+int a = Integer.parseInt(str1);//整数字符串转为整数类型
+</code></pre>
+<h2 id="3循环结构注意事项">3.循环结构注意事项</h2>
+<pre><code class="language-java">for(输出1;/*不写时默认为True*/;输出2){输出3}//结果为13232....
+//退出多层循环：
+haha:for(;;){
+	for(;;){
+		break haha;
+	}
+}
+break是用于终止本轮所有次循环。即不执行本次循环中break后面的语句,直接跳出循环。
+continue是用于终止本轮本次循环。即本次循环中continue后面的代码不执行,进行下一次循环的入口判断。
+</code></pre>
+<h2 id="4其它">4.其它</h2>
+<pre><code class="language-java">制表符&quot;\t&quot;  
+N次方：Math.pow(num,n)
+if(input.hasNextInt()){}//接收输入前判断输入类型是否为int
+</code></pre>
+<h1 id="day03-523-24">Day03 5.23-24</h1>
+<h2 id="1数组">1.数组</h2>
+<pre><code class="language-java">格式1.数据类型[] 数组名称 = new 数据类型[数组长度];//常用（长度）
+格式2.数据类型[] 数组名称 = {内容1,...内容n};//常用（长度+内容）
+格式3.数据类型[] 数组名;//只创建数组引用名，未在内存创建数组空间。 
+格式4.数据类型[] 数组名称 = new 数据类型[]{内容1,...内容n};
+//数组创建后长度便固定；
+//格式3中定义在局部的数组未赋值(可赋值null来避免，但访问数组具体元素时仍会出现空指针异常)便使用会出现空指针异常，全局中定义的数组(需static修饰)未赋值时，内部使用默认为null;
+//格式2中的内容整体赋值只能在数组声明时使用：使用格式3后，初始化需完整写一遍格式2，即不能直接将内容整体赋值给数组，需加上数据类型进行声明(多维数组降维后不可这样初始化),也可以直接用格式4等号右边进行赋值；
+int[] nums;
+nums = new int[]{1,2,3};//或者 int[] nums = {1,2,3};
+//多维数组：int[][] 二维数组名 = new int[长度][];
+int[][] nums = new int[10][];
+nums[0] = new int[]{1,2,3};
+</code></pre>
+<h1 id="day04-525-26">Day04 5.25-26</h1>
+<h2 id="1双色球案例">1.双色球案例</h2>
+<pre><code class="language-java">Random r = new Random();
+int index = r.nextInt(33);  //返回一个0-32之间的一个随机数
+//利用Arrays.toString(数组名)方法一次性输出整个数组
+</code></pre>
+]]></content>
+    </entry>
 </feed>
